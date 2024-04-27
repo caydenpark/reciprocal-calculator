@@ -1,12 +1,3 @@
-// function greeter(person: string) {
-//   return "Hello, " + person;
-// }
-   
-// let user = "Jane User";
-   
-// document.body.textContent = greeter(user);
-
-
 function calculate() {
     let percentageChangeInput = document.getElementById('a') as HTMLInputElement;
     let percentageChange: number = parseFloat(percentageChangeInput.value);
