@@ -10,29 +10,36 @@
         <table class="bg-slate-100 rounded-3xl">
           <thead>
               <tr>
-                  <th colspan="4" class="bg-red-800 rounded-t-3xl py-6 px-10 text-5xl text-slate-100">
+                  <th colspan="2" class="bg-red-800 rounded-t-3xl py-6 px-10 text-5xl text-slate-100">
                       Time Abundance Calculator
                   </th>
               </tr>
           </thead>
           <tbody>
               <tr>
-                  <td colspan="2" class="text-right text-slate-600 font-bold text-xl py-5 pl-4">
-                    Percentage Change in <br> the Variable
+                  <td class="text-right text-[#595959]-800 font-bold text-3xl py-5 pr-5 w-1/2">
+                    <p>Time Price</p>
+                    <p class="text-base text-slate-500 font-medium">Percentage Change</p>
                   </td>
-                  <td></td>
-                  <td class="flex items-center justify-center py-6 pr-6">
+                  <td class="flex items-center py-6 pl-5">
                       <input type="text" id="a" class="bg-yellow-100 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
                   </td>
               </tr>
               <tr>
-                  <td colspan="2" class="text-right text-slate-600 font-bold text-xl py-5 pl-4">
-                    Percentage Change in the <br> Reciprocal of the Variable
+                  <td class="text-right text-[#595959]-800 font-bold text-3xl py-5 pr-5">
+                    <p>Abundance</p>
+                    <p class="text-base text-slate-500 font-medium">Percentage Change</p>
                   </td>
-                  <td></td>
-                  <td class="flex items-center justify-center py-6 pr-6">
+                  <td class="flex items-center py-6 pl-5">
                       <input readonly type="text" id="b" class="bg-slate-50 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
                   </td>
+              </tr>
+              <tr>
+                <td colspan="2" class="w-full text-center">
+                  <button class="text-xl font-bold bg-slate-300 hover:text-slate-300 hover:bg-slate-800 border-2 border-slate-800 rounded-lg py-1 px-3 m-5">
+                    Clear
+                  </button>
+                </td>
               </tr>
           </tbody>
         </table>

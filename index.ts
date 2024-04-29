@@ -15,9 +15,12 @@ function addPercentSign(event: KeyboardEvent) {
     // Check if the key pressed is the "delete" button (keycode 46)
     if (!['Delete', 'Backspace', 'ArrowLeft', 'ArrowRight', '-'].includes(event.key)) {
         let elementA = document.getElementById('a') as HTMLInputElement;
-        let elementAValue = elementA.value.replace(/%/g, '');
-        elementA.value = elementAValue + '%';
-
+        let elementAValue = elementA.value.replace(/[+%]/g, '');
+        let elementANumber = parseFloat(elementA.value);
+        if (elementANumber > 0) {
+            elementA.value = '+' + elementAValue + '%';
+        } else {elementA.value = elementAValue + '%';}
+        
         // Move the cursor to appear before the percent sign
         elementA.setSelectionRange(elementA.value.length - 1, elementA.value.length - 1);
     }
@@ -27,4 +30,13 @@ const elementA = document.getElementById('a');
 if (elementA) {
     elementA.addEventListener('keyup', addPercentSign);
     elementA.addEventListener('input', calculate);
+    document.getElementsByTagName('button')[0].addEventListener('click', clear);
 }
+
+function clear() {
+    let percentageChangeInput = document.getElementById('a') as HTMLInputElement;
+    let percentageChangeOutput = document.getElementById('b') as HTMLInputElement;
+    percentageChangeInput.value = '';
+    percentageChangeOutput.value = '';
+}
+
