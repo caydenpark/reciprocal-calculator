@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./output.css" >
+  <link rel="stylesheet" href="./slider.css">
 </head>
 <body>
     <main class="flex justify-center p-10">
         <table class="bg-slate-100 rounded-3xl">
           <thead>
               <tr>
-                  <th colspan="2" class="bg-red-800 rounded-t-3xl py-6 px-10 text-5xl text-slate-100">
+                  <th colspan="2" class="bg-custom-red rounded-t-3xl py-6 px-10 text-5xl text-slate-100">
                       Time Abundance <br> Calculator
                   </th>
               </tr>
@@ -21,8 +22,17 @@
                     <p>Time Price</p>
                     <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
                   </td>
-                  <td class="flex items-center py-6 pl-5">
+                  <td class="items-center py-6 pl-5">
                       <input type="text" id="a" class="bg-yellow-100 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
+                      <input type="range" min="-100" max="0" value="0" list="tickmarks" id="slider" class="w-36">
+                      <datalist id="tickmarks">
+                        <option value="-100" label="-100%"></option>
+                        <option value="0" label="0%"></option>
+                      </datalist>
+                      <p class="flex justify-between w-36 py-10">
+                        <span>-100%</span>
+                        <span>0%</span>
+                      </p>
                   </td>
               </tr>
               <tr>
@@ -36,7 +46,8 @@
               </tr>
               <tr>
                 <td colspan="2" class="w-full text-center">
-                  <button class="text-xl text-[#595959] font-bold bg-slate-300 hover:text-slate-300 hover:bg-[#595959] border-2 border-[#595959] rounded-lg py-1 px-3 m-5">
+                  <button id="clearButton" 
+                    class="text-xl text-[#595959] font-bold bg-slate-300 hover:text-slate-300 hover:bg-[#595959] border-2 border-[#595959] rounded-lg py-1 px-3 m-5">
                     Clear
                   </button>
                 </td>

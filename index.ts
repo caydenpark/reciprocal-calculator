@@ -1,14 +1,23 @@
+var slider = document.getElementById('slider') as HTMLInputElement;
+var output = document.getElementById('a') as HTMLInputElement;
+output.innerHTML = slider.value;
+
 function calculate() {
     let percentageChangeInput = document.getElementById('a') as HTMLInputElement;
     let percentageChange: number = parseFloat(percentageChangeInput.value);
-    let percentageChangeReciprocal = ((-(percentageChange / 100)) / (1 + (percentageChange / 100))) * 100;
-
+    
     let percentageChangeOutput = document.getElementById('b') as HTMLInputElement;
-    if (!['', '-', '%', '-%'].includes(percentageChangeInput.value)) {
-        if (percentageChangeReciprocal > 0) {
-            percentageChangeOutput.value = '+' + percentageChangeReciprocal.toFixed(0).toString() + '%';
-        } else {percentageChangeOutput.value = percentageChangeReciprocal.toFixed(0).toString() + '%';}
-    } else { percentageChangeOutput.value = ''; }
+    
+    if (percentageChange === -100) {
+        percentageChangeOutput.value = 'FREE'; 
+    } else {
+        let percentageChangeReciprocal = ((-(percentageChange / 100)) / (1 + (percentageChange / 100))) * 100;
+        if (!['', '-', '%', '-%'].includes(percentageChangeInput.value)) {
+            if (percentageChangeReciprocal > 0) {
+                percentageChangeOutput.value = '-' + percentageChangeReciprocal.toFixed(0).toString() + '%';
+            } else {percentageChangeOutput.value = percentageChangeReciprocal.toFixed(0).toString() + '%';}
+        } else { percentageChangeOutput.value = ''; }
+    }
 }
 
 function addPercentSign(event: KeyboardEvent) {
@@ -18,7 +27,7 @@ function addPercentSign(event: KeyboardEvent) {
         let elementAValue = elementA.value.replace(/[+%]/g, '');
         let elementANumber = parseFloat(elementA.value);
         if (elementANumber > 0) {
-            elementA.value = '+' + elementAValue + '%';
+            elementA.value = '-' + elementAValue + '%';
         } else {elementA.value = elementAValue + '%';}
         
         // Move the cursor to appear before the percent sign
@@ -30,7 +39,6 @@ const elementA = document.getElementById('a');
 if (elementA) {
     elementA.addEventListener('keyup', addPercentSign);
     elementA.addEventListener('input', calculate);
-    document.getElementsByTagName('button')[0].addEventListener('click', clear);
 }
 
 function clear() {
@@ -38,5 +46,16 @@ function clear() {
     let percentageChangeOutput = document.getElementById('b') as HTMLInputElement;
     percentageChangeInput.value = '';
     percentageChangeOutput.value = '';
+    slider.value = '0';
 }
 
+const clearButton = document.getElementById('clearButton');
+if (clearButton) {
+    clearButton.addEventListener('click', clear);
+}
+
+
+slider.oninput = function() {
+    output.value = (this as HTMLInputElement).value + '%';
+    calculate();
+}

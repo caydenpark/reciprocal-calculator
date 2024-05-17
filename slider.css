@@ -1,0 +1,84 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 9rem;
+  height: 15px; /* Adjust track height */
+  background: transparent;
+  /* outline: none; */
+  transition: opacity .15s ease-in-out;
+  /* vertical-align: middle; */
+}
+
+/* Track */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px; /* Same height as the slider */
+  background: #595959;
+  border-radius: 1.5px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px; /* Same height as the slider */
+  background: #ccc; /* Default track color */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8px; /* Same height as the slider */
+  background: #ccc; /* Default track color */
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #9d1e36;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-top: -8px; /* Center thumb vertically */
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px; /* Adjust thumb size */
+  height: 24px; /* Adjust thumb size */
+  background: #9d1e36; /* Thumb color */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 50%; /* Round thumb */
+}
+
+input[type="range"]::-ms-thumb {
+  width: 24px; /* Adjust thumb size */
+  height: 24px; /* Adjust thumb size */
+  background: #9d1e36; /* Thumb color */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 50%; /* Round thumb */
+}
+
+/* Focus styles */
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #595959; /* Same color as the default */
+}
+
+input[type="range"]:focus::-moz-range-track {
+  background: #ccc; /* Same color as the default */
+}
+
+input[type="range"]:focus::-ms-track {
+  background: #ccc; /* Same color as the default */
+}
