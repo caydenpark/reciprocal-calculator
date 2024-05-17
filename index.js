@@ -12,7 +12,7 @@ function calculate() {
         var percentageChangeReciprocal = ((-(percentageChange / 100)) / (1 + (percentageChange / 100))) * 100;
         if (!['', '-', '%', '-%'].includes(percentageChangeInput.value)) {
             if (percentageChangeReciprocal > 0) {
-                percentageChangeOutput.value = '-' + percentageChangeReciprocal.toFixed(0).toString() + '%';
+                percentageChangeOutput.value = '+' + percentageChangeReciprocal.toFixed(0).toString() + '%';
             }
             else {
                 percentageChangeOutput.value = percentageChangeReciprocal.toFixed(0).toString() + '%';

@@ -18,31 +18,27 @@
           </thead>
           <tbody>
               <tr>
-                  <td class="text-right text-[#595959] font-bold text-3xl py-5 pr-5 w-1/2">
-                    <p>Time Price</p>
-                    <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
-                  </td>
-                  <td class="items-center py-6 pl-5">
-                      <input type="text" id="a" class="bg-yellow-100 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
-                      <input type="range" min="-100" max="0" value="0" list="tickmarks" id="slider" class="w-36">
-                      <datalist id="tickmarks">
-                        <option value="-100" label="-100%"></option>
-                        <option value="0" label="0%"></option>
-                      </datalist>
-                      <p class="flex justify-between w-36 py-10">
-                        <span>-100%</span>
-                        <span>0%</span>
-                      </p>
-                  </td>
+                <td class="text-right py-6 pr-5 border-red-100">
+                  <input type="text" id="a" class="bg-yellow-100 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
+                  <input type="range" min="-100" max="0" value="0" list="tickmarks" id="slider">
+                  <datalist id="tickmarks" class="flex justify-end space-x-16">
+                    <option value="-100" label="-100%" class="text-[#7f7f7f] font-medium"></option>
+                    <option value="0" label="0%" class="text-[#7f7f7f] font-medium"></option>
+                  </datalist>
+                </td>
+                <td class="text-left text-[#595959] font-bold text-3xl py-5 pl-5 w-1/2">
+                  <p>Time Price</p>
+                  <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
+                </td>
               </tr>
               <tr>
-                  <td class="text-right text-[#595959] font-bold text-3xl py-5 pr-5">
-                    <p>Abundance</p>
-                    <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
-                  </td>
-                  <td class="flex items-center py-6 pl-5">
-                      <input readonly type="text" id="b" class="bg-slate-50 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
-                  </td>
+                <td class="text-right py-6 pr-5">
+                  <input readonly type="text" id="b" class="bg-slate-50 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
+                </td>
+                <td class="text-left text-[#595959] font-bold text-3xl py-5 pl-5 w-1/2">
+                  <p>Abundance</p>
+                  <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
+                </td>
               </tr>
               <tr>
                 <td colspan="2" class="w-full text-center">
