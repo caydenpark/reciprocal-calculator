@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./output.css" >
+  <link rel="stylesheet" href="./slider-vertical.css">
+</head>
+<body>
+    <main class="flex justify-center p-10">
+        <table class="bg-slate-100 rounded-3xl">
+          <thead>
+              <tr>
+                  <th colspan="3" class="bg-custom-red rounded-t-3xl py-6 px-10 text-5xl text-slate-100">
+                      Time Abundance <br> Calculator
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td class="text-right p-5 border-red-100 w-1/3 pl-20">
+                  <input type="text" id="a" class="bg-yellow-100 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
+                </td>
+                <td class="text-left text-[#595959] font-bold text-3xl py-5 pl-5 w-1/3">
+                  <p>Time Price</p>
+                  <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
+                </td>
+                <td class="w=1/3 pt-5 text-left">
+                    <div class="flex justify-between pr-5">
+                        <input type="range" min="-100" max="0" value="0" list="tickmarks" id="slider">
+                        <div class="text-[#7f7f7f] font-medium text-left flex flex-col justify-between pr-5 pl-2">
+                            <p>0%</p>
+                            <p>-100%</p>
+                        </div>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right py-6 pr-5">
+                  <input readonly type="text" id="b" class="bg-slate-50 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-xl">
+                </td>
+                <td class="text-left text-[#595959] font-bold text-3xl py-5 pl-5 w-1/2">
+                  <p>Abundance</p>
+                  <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="w-full text-center">
+                  <button id="clearButton" 
+                    class="text-xl text-[#595959] font-bold bg-slate-300 hover:text-slate-300 hover:bg-[#595959] border-2 border-[#595959] rounded-lg py-1 px-3 m-5">
+                    Clear
+                  </button>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+    </main>
+  <script src="index.js"></script>
+</body>
+</html>

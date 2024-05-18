@@ -1,0 +1,57 @@
+/* Chrome, Safari, Edge, Opera */
+input[type="range"] {
+    writing-mode: vertical-rl;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 9rem;
+    width: 15px;
+    background: transparent;
+    transform: rotate(180deg);
+}
+
+/* Track */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 3px;
+    height: 100%;
+    background: #595959;
+    border-radius: 1.5px;
+}
+
+/* Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #9d1e36;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: -9px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #9d1e36;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* IE */
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #9d1e36;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Focus styles */
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #595959;
+}
