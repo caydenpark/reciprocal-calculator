@@ -14,8 +14,13 @@ function calculate() {
         let percentageChangeReciprocal = ((-(percentageChange / 100)) / (1 + (percentageChange / 100))) * 100;
         if (!['', '-', '%', '-%'].includes(percentageChangeInput.value)) {
             if (percentageChangeReciprocal > 0) {
-                percentageChangeOutput.value = '+' + percentageChangeReciprocal.toFixed(0).toString() + '%';
-            } else {percentageChangeOutput.value = percentageChangeReciprocal.toFixed(0).toString() + '%';}
+                // Add commas after the first digit for numbers 1000 or greater
+                let formattedValue = percentageChangeReciprocal.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                percentageChangeOutput.value = '+' + formattedValue + '%';
+            } else {
+                let formattedValue = percentageChangeReciprocal.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                percentageChangeOutput.value = formattedValue + '%';
+            }
         } else { percentageChangeOutput.value = ''; }
     }
 }

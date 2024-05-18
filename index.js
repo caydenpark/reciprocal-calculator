@@ -12,10 +12,13 @@ function calculate() {
         var percentageChangeReciprocal = ((-(percentageChange / 100)) / (1 + (percentageChange / 100))) * 100;
         if (!['', '-', '%', '-%'].includes(percentageChangeInput.value)) {
             if (percentageChangeReciprocal > 0) {
-                percentageChangeOutput.value = '+' + percentageChangeReciprocal.toFixed(0).toString() + '%';
+                // Add commas after the first digit for numbers 1000 or greater
+                var formattedValue = percentageChangeReciprocal.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                percentageChangeOutput.value = '+' + formattedValue + '%';
             }
             else {
-                percentageChangeOutput.value = percentageChangeReciprocal.toFixed(0).toString() + '%';
+                var formattedValue = percentageChangeReciprocal.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                percentageChangeOutput.value = formattedValue + '%';
             }
         }
         else {

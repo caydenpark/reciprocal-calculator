@@ -19,7 +19,7 @@
           <tbody>
               <tr>
                 <td class="text-right py-6 pr-5 border-red-100">
-                  <input type="text" id="a" class="bg-yellow-100 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-3xl">
+                  <input type="text" id="a" value="0%" class="bg-yellow-100 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-3xl">
                   <input type="range" min="-100" max="0" value="0" list="tickmarks" id="slider">
                   <div id="tickmarks" class="flex justify-end space-x-14">
                     <p class="text-[#7f7f7f] font-medium text-xl">-100%</p>
@@ -33,21 +33,21 @@
               </tr>
               <tr>
                 <td class="text-right py-6 pr-5">
-                  <input readonly type="text" id="b" class="bg-slate-50 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-3xl">
+                  <input readonly type="text" id="b" value="0%" class="bg-slate-50 h-12 w-36 border-2 border-slate-300 text-center text-slate-700 font-bold text-3xl">
                 </td>
                 <td class="text-left text-[#595959] font-bold text-3xl py-5 pl-5 w-1/2">
                   <p>Abundance</p>
                   <p class="text-base text-[#7f7f7f] font-medium">Percentage Change</p>
                 </td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td colspan="2" class="w-full text-center">
                   <button id="clearButton" 
                     class="text-xl text-[#595959] font-bold bg-slate-300 hover:text-slate-300 hover:bg-[#595959] border-2 border-[#595959] rounded-lg py-1 px-3 m-5">
                     Clear
                   </button>
                 </td>
-              </tr>
+              </tr> -->
           </tbody>
         </table>
     </main>
