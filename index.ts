@@ -20,6 +20,18 @@ function calculate() {
     }
 }
 
+const inputA = document.getElementById('a') as HTMLInputElement;
+
+if (inputA) {
+    inputA.addEventListener('input', function() {
+        // Parse the value of inputA as a float
+        const floatValue = parseFloat(inputA.value.replace('%', '')) || 0;
+        // Convert the float value back to a string and assign it to the slider value
+        slider.value = floatValue.toString();
+        calculate(); // Recalculate based on the new slider value
+    });
+}
+
 function addPercentSign(event: KeyboardEvent) {
     // Check if the key pressed is the "delete" button (keycode 46)
     if (!['Delete', 'Backspace', 'ArrowLeft', 'ArrowRight', '-'].includes(event.key)) {
